@@ -1,31 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Teste API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste API - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Testando API</h1>
+    <div class="container">
+        <h1>Gerenciador de API</h1>
 
-<input type="text" id="nome" placeholder="Nome">
-<input type="text" id="email" placeholder="Email">
-<button onclick="criar()">Criar</button>
+        <div class="card">
+            <h3>Criar Novo Usuário</h3>
+            <div class="input-group">
+                <input type="text" id="nome" placeholder="Nome completo">
+                <input type="text" id="email" placeholder="E-mail">
+                <button class="btn btn-primary" onclick="criar()">Criar</button>
+            </div>
+        </div>
 
-<button onclick="listar()">Listar</button>
+        <div class="card">
+            <h3>Consultas e Ações</h3>
+            <div class="actions-grid">
+                <button class="btn btn-outline" onclick="listar()">Listar Todos</button>
+                
+                <div class="id-actions">
+                    <input type="number" id="id" placeholder="ID">
+                    <button class="btn btn-secondary" onclick="buscar()">Buscar</button>
+                </div>
+            </div>
 
-<br><br>
+            <div class="update-group">
+                <input type="text" id="novoNome" placeholder="Novo nome para atualizar">
+                <div class="button-row">
+                    <button class="btn btn-warning" onclick="atualizar()">Atualizar</button>
+                    <button class="btn btn-danger" onclick="deletar()">Deletar</button>
+                </div>
+            </div>
+        </div>
 
-<input type="number" id="id" placeholder="ID">
-<button onclick="buscar()">Buscar</button>
+        <div class="card result-card">
+            <h3>Resultado da Requisição</h3>
+            <pre id="resultado">Aguardando interação...</pre>
+        </div>
+    </div>
 
-<input type="text" id="novoNome" placeholder="Novo nome">
-<button onclick="atualizar()">Atualizar</button>
-
-<button onclick="deletar()">Deletar</button>
-
-<pre id="resultado"></pre>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
